@@ -27,7 +27,7 @@ $Black: hsl(0, 0%, 7%);
   border-radius: 10px;
   min-width: 8rem;
   width: fit-content;
-  h2 {
+  h1 {
     margin: 1rem 0;
     font-weight: 500;
     font-size: 1.2rem;
@@ -71,7 +71,7 @@ body{
     border-radius: 50%; 
   }
 
-  h3, p {
+  h2, p {
     margin: 0;
   }
 
@@ -111,7 +111,7 @@ body{
     z-index: 0;
   }
 
-  .Avatar, h2, h3 {
+  .Avatar, h1, h2 {
     position: relative;
     z-index: 1;
   }

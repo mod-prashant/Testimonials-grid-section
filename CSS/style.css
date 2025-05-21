@@ -9,7 +9,7 @@
   min-width: 8rem;
   width: fit-content;
 }
-#Kira h2, #Patrick h2, #Jeanette h2, #Jonathan h2, #Daniel h2 {
+#Kira h1, #Patrick h1, #Jeanette h1, #Jonathan h1, #Daniel h1 {
   margin: 1rem 0;
   font-weight: 500;
   font-size: 1.2rem;
@@ -49,7 +49,7 @@ body {
   height: 50px;
   border-radius: 50%;
 }
-.author h3, .author p {
+.author h2, .author p {
   margin: 0;
 }
 .author .author-text {
@@ -82,7 +82,7 @@ body {
   pointer-events: none;
   z-index: 0;
 }
-#Daniel .Avatar, #Daniel h2, #Daniel h3 {
+#Daniel .Avatar, #Daniel h1, #Daniel h2 {
   position: relative;
   z-index: 1;
 }
