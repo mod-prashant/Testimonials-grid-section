@@ -82,7 +82,7 @@ body {
   pointer-events: none;
   z-index: 0;
 }
-#Daniel h2, #Daniel h3 {
+#Daniel .Avatar, #Daniel h2, #Daniel h3 {
   position: relative;
   z-index: 1;
 }
@@ -109,6 +109,28 @@ body {
   background-color: hsl(0, 0%, 100%);
   color: hsl(0, 0%, 7%);
   grid-area: Kira;
+}
+
+footer {
+  background-color: hsl(224, 10%, 45%);
+  color: hsl(260, 100%, 95%);
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  #Daniel .corner-svg {
+    display: none;
+  }
+  .testimonials {
+    display: grid;
+    grid-template-areas: "Daniel" "Jonathan" "Jeanette" "Patrick" "Kira";
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
