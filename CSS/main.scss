@@ -1,3 +1,4 @@
+$font: "Barlow Semi Condensed", sans-serif;;
 $Purple50: hsl(260, 100%, 95%);
 $Purple300: hsl(264, 82%, 80%);
 $Purple500: hsl(263, 55%, 52%);
@@ -9,6 +10,133 @@ $Grey500: hsl(217, 19%, 35%);
 $Darkblue: hsl(219, 29%, 14%);
 $Black: hsl(0, 0%, 7%);
 
-body{
-    font-size: 13px;
+// 2. Mixin for card style
+@mixin card($bg-color, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
 }
+
+// 3. Shared card base styles
+%card-base {
+  font-family: $font;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.353);
+  padding: 1.5rem;
+  border-radius: 10px;
+  min-width: 8rem;
+  width: fit-content;
+  h2 {
+    margin: 1rem 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  p {
+    opacity: 0.85;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 13px;
+  font-family: $font;
+  background-color: $Purple50;
+  color: $White;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+
+/* author */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem; 
+
+  .Avatar img {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%; 
+  }
+
+  h3, p {
+    margin: 0;
+  }
+
+  .author-text {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* testimonials*/
+
+.testimonials{
+  max-width: 1250px;
+  display: grid;
+  grid-template-areas: 
+  "Daniel Daniel Jonathan Kira"
+  "Jeanette Patrick Patrick Kira";
+  gap: 2rem;
+  
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+}
+
+#Daniel{
+  @extend %card-base;
+  @include card($Purple500, $White);
+  position: relative;
+  grid-area: Daniel;
+
+  .corner-svg {
+    position: absolute;
+    top: 0;
+    right: 4rem;
+    width: 7rem; 
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h2, h3 {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+#Jonathan{
+  @extend %card-base;
+  @include card($Grey500, $White);
+  grid-area: Jonathan;
+}
+
+#Jeanette{
+  @extend %card-base;
+  @include card($White, $Black);
+  grid-area: Jeanette;
+}
+
+#Patrick{
+  @extend %card-base;
+  @include card($Darkblue, $White);
+  grid-area: Patrick;
+}
+
+#Kira{
+  @extend %card-base;
+  @include card($White, $Black);
+  grid-area: Kira;
+} 
